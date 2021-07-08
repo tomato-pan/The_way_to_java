@@ -29,6 +29,20 @@ public class binTree1 {
         preOrder(root.left);
         preOrder(root.right);
     }
+    // 中序打印
+    public void inOrder(TreeNode root) {
+        if (root == null) return ;
+        inOrder(root.left);
+        System.out.println(root.val);
+        inOrder(root.right);
+    }
+    // 后序打印
+    public void postOrder(TreeNode root) {
+        if (root == null) return ;
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.println(root.val);
+    }
     //翻转二叉树 镜像二叉树
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
@@ -54,6 +68,11 @@ public class binTree1 {
         System.out.println(a1.count(t1));
         System.out.println(a1.invertTree(t1));
         a1.preOrder(t1);
+        System.out.println("");
+        a1.postOrder(t1);
+        System.out.println("");
+        a1.inOrder(t1);
+        System.out.println("");
         a1.preOrder(a1.invertTree(t1));
     }
 }
