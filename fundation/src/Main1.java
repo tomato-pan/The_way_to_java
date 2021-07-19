@@ -19,7 +19,8 @@ public class Main1 {
         p2.hello();
         System.out.println(p2 instanceof Student);
 //        Student s2 = (Student) p2; // runtime error! ClassCastException!
-
+        // 多态
+        p1.hello2(p1);
 
     }
 }
@@ -29,6 +30,10 @@ class Person {
     protected int age;
     public void hello() {
         System.out.println("hello!!");
+    }
+    public void hello2(Person p) {
+        p.hello();
+        p.hello();
     }
     public Person(String name, int age) {
         this.name = name;
