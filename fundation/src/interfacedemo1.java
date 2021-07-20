@@ -5,19 +5,23 @@ public class interfacedemo1 {
         System.out.println(bb.getName());
     }
 }
-interface Car{
+
+interface Car {
     void run();
+
     String getName();
 }
-class Bens implements Car{
+
+class Bens implements Car {
     private String name;
-    public Bens(String name){
+
+    public Bens(String name) {
         this.name = name;
     }
 
     @Override
     public void run() {
-        System.out.println(this.name+" running!");
+        System.out.println(this.name + " running!");
     }
 
     @Override
