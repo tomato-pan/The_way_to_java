@@ -1,3 +1,5 @@
+import java.util.StringJoiner;
+
 public class StringBuilferDemo1 {
     public static void main(String[] args) {
         String[] fields = { "name", "position", "salary" };
@@ -6,6 +8,21 @@ public class StringBuilferDemo1 {
         System.out.println(insert);
         String s = "INSERT INTO employee (name, position, salary) VALUES (?, ?, ?)";
         System.out.println(s.equals(insert) ? "测试成功" : "测试失败");
+
+        String[] fields1 = { "name", "position", "salary" };
+        String table1 = "employee";
+        String select = buildSelectSql(table1, fields1);
+        System.out.println(select);
+        System.out.println("SELECT name, position, salary FROM employee".equals(select) ? "测试成功" : "测试失败");
+    }
+
+    private static String buildSelectSql(String table1, String[] fields1) {
+        StringJoiner sj = new StringJoiner(", ","SELECT "," FROM "+table1);
+        for (String field:fields1){
+            sj.add(field);
+
+        }
+        return sj.toString();
     }
 
     private static String bulidInsertSql(String table, String[] fields) {
@@ -17,5 +34,6 @@ public class StringBuilferDemo1 {
         }
         insert.append(") VALUES (?, ?, ?)");
         return insert.toString();
+
     }
 }
