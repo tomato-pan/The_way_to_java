@@ -20,5 +20,15 @@ public class stringdemo1 {
         sBuffer.append(".javaapi");
         sBuffer.append(".com");
         System.out.println(sBuffer);
+
+//        System.out.println("hello".contains("0"));
+//        System.out.println("hello".lastIndexOf("0"));
+//        System.out.println("hello".startsWith("h"));
+//        System.out.println("hello".substring(2,5));
+
+        String s11 = "HI %s , your score is %d!!";
+        System.out.println(String.format(s11,"aaa",80));
+
+
     }
 }
