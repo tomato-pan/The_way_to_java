@@ -1,5 +1,10 @@
 import com.sun.deploy.ui.AboutDialog;
 
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+
 public class classdemo1 {
     public int number;
     public String name;
@@ -26,6 +31,18 @@ public class classdemo1 {
         System.out.println("location: " + xm.getLatitude() + ", " + xm.getLongitude());
 //        la = 201.11;
 //        System.out.println(xm.getLatitude());
+        //枚举 javabean的属性
+        BeanInfo info = null;
+        try {
+            info = Introspector.getBeanInfo(City.class);
+        } catch (IntrospectionException e) {
+            e.printStackTrace();
+        }
+        for (PropertyDescriptor pd : info.getPropertyDescriptors()){
+            System.out.println(pd.getName());
+            System.out.println(" "+pd.getReadMethod());
+            System.out.println(" "+pd.getWriteMethod());
+        }
     }
 }
 
