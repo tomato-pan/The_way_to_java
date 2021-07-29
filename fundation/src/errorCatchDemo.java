@@ -17,7 +17,7 @@ public class errorCatchDemo {
         process1();
         process2();
         process3();
-        } catch (IOException e) {
+        } catch (IOException | NumberFormatException e) { //合并处理
             System.out.println("IO error");
         } catch (UnsupportedEncodingException e) { // 永远捕获不到 因为UnsupportedEncodingException是IOException的子类，所以应该放置在前面
             System.out.println("Bad encoding");
