@@ -1,4 +1,3 @@
-import com.sun.deploy.ui.AboutDialog;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
@@ -38,6 +37,7 @@ public class classdemo1 {
         } catch (IntrospectionException e) {
             e.printStackTrace();
         }
+        assert info != null;
         for (PropertyDescriptor pd : info.getPropertyDescriptors()){
             System.out.println(pd.getName());
             System.out.println(" "+pd.getReadMethod());
