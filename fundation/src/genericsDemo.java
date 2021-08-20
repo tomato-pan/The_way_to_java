@@ -6,6 +6,7 @@ public class genericsDemo {
         int s2 = 2133;
         add(s1,s2);
     }
+
     private static <T extends Number> double add(T a , T b){
 
         System.out.println(a.doubleValue()+b.doubleValue());
@@ -23,4 +24,7 @@ class Generic<T> {
     public T getKey() {
         return key;
     }
+}
+interface Generator<T> {
+    public T method();
 }
