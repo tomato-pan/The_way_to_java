@@ -20,6 +20,8 @@ public class reflectDemo {
         System.out.println("getDeclaredMethods获取的方法：");
         for(Method m:declaredMethods)
             System.out.println(m);
+
+
     }
     public static void test2() throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         Class<?> klass = methodClass.class;
@@ -67,6 +69,7 @@ public class reflectDemo {
         }
 
         System.out.println(list);
+
     }
 }
 class methodClass {
