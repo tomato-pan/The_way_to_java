@@ -1,5 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class genericsDemo {
     public static void main(String[] args) {
@@ -9,13 +12,27 @@ public class genericsDemo {
         int s2 = 2133;
         add(s1,s2);
         ArrayList list123 = new ArrayList();
+//        Class alu = ArrayList.class;
+        Class alu = null;
+        try {
+            alu = Class.forName("java.util.ArrayList");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println(alu);
         list123.add(1);
         list123.add("123");
         list123.add(new Date());
         for (int i=0;i<list123.size();i++){
             System.out.println(list123.get(i));
         }
-
+        try(Scanner sc = new Scanner(new File("d:/test.txt"))){
+            while (sc.hasNext()){
+                System.out.println(sc.nextLine());
+            }
+        }catch (FileNotFoundException fnfe){
+            fnfe.printStackTrace();
+        }
     }
 
     private static <T extends Number> double add(T a , T b){
