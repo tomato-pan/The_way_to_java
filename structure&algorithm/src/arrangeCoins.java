@@ -17,6 +17,7 @@ public class arrangeCoins {
         int left = 1, right = n;
         while (left < right) {
             int mid = (right - left + 1) / 2 + left;
+            System.out.println("mid:"+mid);
             if ((long) mid * (mid + 1) <= (long) 2 * n) {
                 left = mid;
             } else {
@@ -28,5 +29,6 @@ public class arrangeCoins {
     public static void main(String[] args) {
         arrangeCoins ac = new arrangeCoins();
         System.out.println("line:"+ac.arrangeCoins1(6));
+        System.out.println("line:"+ac.arrangeCoins3(36));
     }
 }
