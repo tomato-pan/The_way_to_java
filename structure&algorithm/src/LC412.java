@@ -17,7 +17,26 @@ public class LC412 {
 
         return list;
     }
+    public int[] prisonAfterNDays(int[] cells, int n) {
+        int n = (n - 1) % 14 + 1;
+        for (int i = 0; i < n; i++) {
+            cells = cal(cells);
+        }
+        return cells;
+    }
 
+    public int[] cal(int[] cells) {
+        int[] array = new int[cells.length];
+        for (int i = 1; i < cells.length - 1; i++) {
+            if (cells[i - 1] == cells[i + 1]) {
+                array[i] = 1;
+            } else {
+                array[i] = 0;
+            }
+        }
+        return array;
+
+    }
     public static void main(String[] args) {
         int n = 15;
         LC412 aa = new LC412();
