@@ -18,7 +18,7 @@ public class LC412 {
         return list;
     }
     public int[] prisonAfterNDays(int[] cells, int n) {
-        int n = (n - 1) % 14 + 1;
+        n = (n - 1) % 14 + 1;
         for (int i = 0; i < n; i++) {
             cells = cal(cells);
         }
