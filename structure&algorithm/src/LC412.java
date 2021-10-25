@@ -37,6 +37,16 @@ public class LC412 {
         return array;
 
     }
+    public int lc453(int[] nums){
+        int n = nums.length;
+        long min = nums[0], sum = 0;
+        for (int i : nums) {
+            min = Math.min(min, i);
+            sum += i;
+        }
+        return (int)(sum - min * n);
+
+    }
     public static void main(String[] args) {
         int n = 15;
         LC412 aa = new LC412();
