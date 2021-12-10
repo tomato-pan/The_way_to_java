@@ -24,6 +24,8 @@ public class LC2 {
             System.out.println(l1.val + l2.val);
             System.out.println(l1.val);
             System.out.println(l2.val);
+            l1=l1.next;
+            l2=l2.next;
         }
         return ans;
     }
