@@ -1,6 +1,6 @@
 package java_003;
 
-public class ListNode {
+class ListNode {
     int val;
     ListNode next;
 
