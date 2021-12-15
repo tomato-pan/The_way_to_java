@@ -48,6 +48,7 @@ public class CollectDemo {
         map.put(1,"google");
         map.put(2,"baidu");
         map.put(3,"google");
+        map.remove(2);
         System.out.println(map);
     }
 }
