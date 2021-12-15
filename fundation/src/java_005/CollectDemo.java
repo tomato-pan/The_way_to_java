@@ -36,5 +36,18 @@ public class CollectDemo {
         for (String ll:linkedlist) {
             System.out.println(ll);
         }
+        // HashSet
+        HashSet<String> set = new HashSet<>();
+        set.add("google");
+        set.add("baidu");
+        set.add("baidu"); // 重复内容不会被添加
+        System.out.println(set);
+        System.out.println(set.contains("bai")); // 方法基本与list一致
+        // HashMap
+        HashMap<Integer,String> map = new HashMap<>();
+        map.put(1,"google");
+        map.put(2,"baidu");
+        map.put(3,"google");
+        System.out.println(map);
     }
 }
