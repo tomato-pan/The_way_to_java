@@ -20,4 +20,19 @@ public class HashMapdemo1 {
         }
         return new int[]{-1,-1};
     }
+    public int [] twoSum1(int [] nums, int target){
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+            if (sum == target) {
+                return new int[]{left, right};
+            } else if (sum < target) {
+                left++; // 让 sum 大一点
+            } else {
+                right--; // 让 sum 小一点
+            }
+        }
+        // 不存在这样两个数
+        return new int[]{-1, -1};
+    }
 }
