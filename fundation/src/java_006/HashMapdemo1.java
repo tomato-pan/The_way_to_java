@@ -20,6 +20,7 @@ public class HashMapdemo1 {
         }
         return new int[]{-1,-1};
     }
+    // 如果数组有序
     public int [] twoSum1(int [] nums, int target){
         int left = 0, right = nums.length - 1;
         while (left < right) {
