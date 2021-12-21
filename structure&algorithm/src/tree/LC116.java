@@ -1,3 +1,7 @@
+package tree;
+
+import tree.TreeNode;
+
 public class LC116 {
     public Node connect(Node root) {
         if (root==null){
@@ -6,7 +10,7 @@ public class LC116 {
         connectTwoNode(root.left,root.right);
         return root;
     }
-    void connectTwoNode(Node node1,Node node2){
+    void connectTwoNode(Node node1, Node node2){
         if (node1 == null || node2 ==null){
             return;
         }

@@ -1,3 +1,5 @@
+package tree;
+
 public class binTree1 {
     public int count(TreeNode root) {
         if (root == null) return 0;
