@@ -3,6 +3,7 @@ package tree;
 import tree.TreeNode;
 
 public class LC116 {
+
     public Node connect(Node root) {
         if (root==null){
             return null;
