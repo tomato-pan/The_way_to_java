@@ -1,11 +1,9 @@
 package java_009;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class numFriendRequests {
     public int numFriendRequests(int[] ages) {
-        ArrayList
         Arrays.sort(ages);
         int n = ages.length, ans = 0;
         for (int k = 0, i = 0, j = 0; k < n; k++) {
