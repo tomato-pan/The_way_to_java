@@ -12,7 +12,7 @@ public class reflectDemo {
         /**
          * 获取TargetObject类的Class对象并且创建TargetObject类实例
          */
-        Class<?> tagetClass = Class.forName("cn.javaguide.TargetObject");
+        Class<?> tagetClass = Class.forName("java_009.TargetObject");
         TargetObject targetObject = (TargetObject) tagetClass.newInstance();
         /**
          * 获取所有类中所有定义的方法
