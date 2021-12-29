@@ -4,13 +4,11 @@ public abstract class Employee {
     private String name;
     private String address;
     private int number;
-    private int salary;
-    public Employee(String name, String address, int number, int salary){
+    public Employee(String name, String address, int number){
         System.out.println("Constructing a Employee");
         this.name=name;
         this.address=address;
         this.number=number;
-        this.salary = salary;
     }
     public double computePay(){
         System.out.println("inside Employee computePay");
@@ -21,7 +19,7 @@ public abstract class Employee {
 
     }
     public String toString(){
-        return name+" "+address+" "+number+" "+salary;
+        return name+" "+address+" "+number;
     }
     public String getName() {
         return name;
@@ -47,11 +45,4 @@ public abstract class Employee {
         this.number = number;
     }
 
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
 }
