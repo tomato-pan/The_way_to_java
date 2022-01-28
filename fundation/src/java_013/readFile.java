@@ -1,6 +1,7 @@
 package java_013;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,7 +16,7 @@ public class readFile {
     public static void main(String[] args) {
         // 读取文件
 
-        String  file = ".\\test.txt";
+        String  file = "D:\\panjgittest\\The_way_to_java\\fundation\\src\\java_013\\test.txt";
 
         List<String> lineLists = null;
         try{
@@ -25,7 +26,11 @@ public class readFile {
         } catch (IOException e) {
             //Your exception handling here
         }
-//        System.out.println(lineLists);
+        System.out.println(lineLists);
+        lineLists.forEach(ele ->{
+            System.out.println(ele);
+        });
+
         List<String> lists= Arrays.asList("a Luis","José Luis","Soǝlènne","sqlPejanović","    ","潘 杰","//panj1@.Paul","一一一!#","とうてんᾤ","가갸거겨고교","Д Д","Ä Ä","ĀāĂăĄ ąĆćĈĉĊ");
         // 正则表达式
         String ss = "^[\u4e00-\u9fa5\u3130-\u318F\u0800-\u4e00\uAC00-\uD7A3\u0400-\u04FF\u0500-\u052F\u2DE0-\u2DFF\uA640-\uA69F\u1C80-\u1C8F 0-9a-zA-Z@\\._\\-\\s]{2,32}$";
@@ -40,4 +45,5 @@ public class readFile {
         System.out.println(aaa.trim().length()==0);
 
     }
+
 }
