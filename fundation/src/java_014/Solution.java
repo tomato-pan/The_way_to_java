@@ -1,6 +1,8 @@
 package java_014;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Solution {
     public int numberOfWeakCharacters(int[][] properties) {
@@ -19,6 +21,13 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
+        List<String> lists= Arrays.asList("a Luis","José Luis","Soǝlènne","sqlPejanović","    ","潘 杰","//panj1@.Paul","一一一!#","とうてんᾤ","가갸거겨고교","Д Д","Ä Ä","ĀāĂăĄ ąĆćĈĉĊ");
+        Solution sl = new Solution();
+        sl.sortStr(lists);
+        System.out.println(lists);
+        System.out.println("avb".compareTo("aaa"));
+    }
+    public void sortStr(List<String> lists){
+        Collections.sort(lists,(s1,s2)->s1.compareTo(s2));
     }
 }
