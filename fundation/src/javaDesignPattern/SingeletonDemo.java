@@ -46,6 +46,8 @@ class Singeleton1{
     }
     public static void main(String[] args) {
         Singeleton1 singeleton = Singeleton1.getInstance();
+        Singeleton1 singeleton1 = Singeleton1.getInstance();
         System.out.println(singeleton);
+        System.out.println(singeleton1);
     }
 }
