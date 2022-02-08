@@ -30,6 +30,12 @@ class ConcreteProduct2 implements Product{
         System.out.println("具体产品2");
     }
 }
+class ConcreteProduct3 implements Product{
+    @Override
+    public void show() {
+        System.out.println("具体产品3333");
+    }
+}
 interface AbstractFactory{
     public Product newProduct();
 }
@@ -45,5 +51,12 @@ class ConcreteFactory2 implements AbstractFactory {
     public Product newProduct() {
         System.out.println("具体工厂2生成-->具体产品2...");
         return new ConcreteProduct2();
+    }
+}
+//具体工厂3：实现了厂品的生成方法
+class ConcreteFactory3 implements AbstractFactory {
+    public Product newProduct() {
+        System.out.println("具体工厂3生成-->具体产品333...");
+        return new ConcreteProduct3();
     }
 }
