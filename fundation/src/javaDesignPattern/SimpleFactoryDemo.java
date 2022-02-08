@@ -1,6 +1,6 @@
 package javaDesignPattern;
 
-public class FactoryDemo {
+public class SimpleFactoryDemo {
     public static void main(String[] args) {
         SimpleFactory.makeProduct(1).show();
         SimpleFactory.makeProduct(0).show();
