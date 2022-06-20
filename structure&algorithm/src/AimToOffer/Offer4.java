@@ -14,7 +14,7 @@ public class Offer4 {
         }
         return false;
     }
-
+    // 从左下角开始扫描，当大于目标值就消行，小于目标值就消列
     public static boolean findNumberIn2DArray1(int[][] matrix, int target) {
         int i = matrix.length - 1, j = 0;
         while(i >= 0 && j < matrix[0].length)
