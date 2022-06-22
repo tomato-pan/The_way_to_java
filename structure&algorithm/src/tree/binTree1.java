@@ -69,7 +69,7 @@ public class binTree1 {
         while (!deque.isEmpty()) {
             int size = deque.size();
             res = deque.peek().val;
-            while (size!= 0) {
+            while (size-->0) {
                 TreeNode poll = deque.pollFirst();
                 if (poll.left != null) deque.addLast(poll.left);
                 if (poll.right != null) deque.addLast(poll.right);

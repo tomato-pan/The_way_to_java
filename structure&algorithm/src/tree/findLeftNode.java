@@ -2,21 +2,18 @@ package tree;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class findLeftNode {
     public static int findBottomLeftValue(TreeNode root) {
-        Deque<TreeNode> deque = new ArrayDeque();
-        deque.addLast(root);
-        int res = 0;
-        while (!deque.isEmpty()) {
-            int size = deque.size();
-            res = deque.peek().val;
-            while (size!= 0) {
-                TreeNode poll = deque.pollFirst();
-                if (poll.left != null) deque.addLast(poll.left);
-                if (poll.right != null) deque.addLast(poll.right);
-            }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            root = queue.poll();
+            if (root.right != null) queue.offer(root.right);
+            if (root.left != null) queue.offer(root.left);
         }
-        return res;
+        return root.val;
     }
 }
