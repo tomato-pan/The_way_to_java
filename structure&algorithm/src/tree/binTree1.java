@@ -1,6 +1,8 @@
 package tree;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 public class binTree1 {
@@ -8,27 +10,31 @@ public class binTree1 {
         if (root == null) return 0;
         return 1 + count(root.left) + count(root.right);
     }
+
     // 前序打印
     public void preOrder(TreeNode root) {
-        if (root == null) return ;
+        if (root == null) return;
         System.out.println(root.val);
         preOrder(root.left);
         preOrder(root.right);
     }
+
     // 中序打印
     public void inOrder(TreeNode root) {
-        if (root == null) return ;
+        if (root == null) return;
         inOrder(root.left);
         System.out.println(root.val);
         inOrder(root.right);
     }
+
     // 后序打印
     public void postOrder(TreeNode root) {
-        if (root == null) return ;
+        if (root == null) return;
         postOrder(root.left);
         postOrder(root.right);
         System.out.println(root.val);
     }
+
     //翻转二叉树 镜像二叉树
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
@@ -45,12 +51,31 @@ public class binTree1 {
     }
 
     ArrayList<Integer> list = new ArrayList<Integer>();
+
     public List<Integer> inorderTraversal(TreeNode root) {
-        if(root == null) {return new ArrayList<Integer>();}
+        if (root == null) {
+            return new ArrayList<Integer>();
+        }
         inorderTraversal(root.left);
         list.add(root.val);
         inorderTraversal(root.right);
         return list;
+    }
+
+    public int BFS(TreeNode root) {
+        Deque<TreeNode> deque = new ArrayDeque();
+        deque.addLast(root);
+        int res = 0;
+        while (!deque.isEmpty()) {
+            int size = deque.size();
+            res = deque.peek().val;
+            while (size!= 0) {
+                TreeNode poll = deque.pollFirst();
+                if (poll.left != null) deque.addLast(poll.left);
+                if (poll.right != null) deque.addLast(poll.right);
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) {
