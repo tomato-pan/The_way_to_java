@@ -1,6 +1,5 @@
 package AimToOffer;
 
-import leetcode.editor.cn.Solution929;
 
 public class Offer4 {
     //暴力

@@ -31,14 +31,24 @@ public class LC206 {
             return pre;
         }
 
+        public static ListNode middleNode(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast != null && fast.next != null) {
+                fast = fast.next.next;
+                slow = slow.next;
+            }
+            return slow;
+        }
+
         public static void main(String[] args) {
             ListNode n1 = new ListNode(1);
             n1.next = new ListNode(2);
             n1.next.next = new ListNode(3);
             ListNode n2 = reverseList(n1);
-            while (n2!=null){
+            while (n2 != null) {
                 System.out.println(n2.val);
-                n2=n2.next;
+                n2 = n2.next;
             }
         }
     }
